@@ -1,0 +1,59 @@
+<h2>Les Compétences</h2>
+
+<div *ngIf="skills.length > 0">
+  <table>
+    <thead>
+      <tr>
+        <th>Nom de la compétence</th>
+        <th>Description</th>
+        <th>Niveau</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let skill of skills">
+        <td>{{skill['nom_compétence']}}</td>
+        <td>
+            <select [(ngModel)]="skill.domaine">
+              <option *ngFor="let domaine of domaines" [ngValue]="domaine">{{ domaine }}</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="skill.niveau">
+              <option *ngFor="let niveau of niveaux" [ngValue]="niveau">{{ niveau}}</option>
+            </select>
+          </td>
+      
+        <td>
+            <button (click)="deleteUserSkill(skill.id)">Supprimer</button>
+            <button (click)="updateUserSkill(userId,skill.id,skill)">Modifier</button>
+          </td> 
+      </tr>
+        <!-- Add a new row for adding a new user skill -->
+        <tr>
+          <td>
+            <input type="text" [(ngModel)]="newSkillName" placeholder="Nom de la compétence">
+          </td>
+          <td>
+            <select [(ngModel)]="newSkillDomain">
+              <option *ngFor="let domaine of domaines" [ngValue]="domaine">{{ domaine }}</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="newSkillNiveau">
+              <option *ngFor="let niveau of niveaux" [ngValue]="niveau">{{ niveau }}</option>
+            </select>
+          </td>
+          <td>
+            <button (click)="addNewSkill()">Ajouter</button>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="skills.length === 0">
+  <p>Aucune compétence trouvée pour cet employé.</p>
+</div>
+
+

@@ -1,0 +1,139 @@
+.catalog-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    width: 50%; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+ 
+ .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; /* Align items at the top */
+    padding: 20px; /* Add padding to the container */
+    max-width: 1200px; /* Set a maximum width to prevent stretching */
+    margin: 0 auto; /* Center the container on the page */
+  }
+  
+  .training-card {
+    margin: 10px;
+    width: 200px; /* Set fixed width for each card */
+    height: min-content;
+    background-color: white; /* For better visibility */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .training-card img {
+    width: 90%; /* Make images fill the container */
+    height: 100px;
+    border-top-left-radius: 5px; /* Round corners for top-left and top-right */
+    border-top-right-radius: 5px;
+    margin-left:auto;
+    margin-right: auto;
+  }
+  
+  .training-info {
+    padding: 15px; /* Add padding for better readability */
+  }
+  
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 85%; /* Adjusted left position */
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popup.active {
+    display: block;
+  }
+  
+  .popup form {
+    margin-bottom: 20px;
+  }
+  
+  .popup label {
+    margin-bottom: 5px;
+  }
+  .add-training-button {
+    background-color: darkred  ;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 45px;
+    margin-bottom: auto;
+    margin-left: 85%;
+
+  }
+  
+  .add-training-button:hover {
+    background-color:hsl(1, 64%, 50%);
+  }
+
+  .popup-container {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute; /* Position absolute */
+    z-index: 1000; /* Ensure it's on top */
+    left: 50%; /* Center horizontally */
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%);
+    width: 400px;
+    max-height: 80vh; /* Maximum height */
+    overflow-y: auto; /* Enable scrolling if content exceeds height */
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #888;
+  }
+  
+  .close-button:hover {
+    color: #333;
+  }
+  
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 999; /* Ensure it's behind the popup */
+  }
+
+  .delete-button {
+    background-color: #007bff; /* Blue color for the button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 8px 16px; /* Padding around the text */
+    font-size: 14px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor indicates clickable */
+    transition: background 0.3s; /* Smooth transition for hover effect */
+}
+
+.delete-button:hover {
+    background-color: #0056b3; /* Darker blue when hovered */
+}
+

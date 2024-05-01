@@ -1,0 +1,43 @@
+
+<div class="form-container">
+  <div *ngIf="user">
+    <form (ngSubmit)="updateUserByUsername()">
+      
+      <label>Username:</label>
+      <input type="text" [(ngModel)]="user.username" name="username" required><br>
+      
+      <label>Nom:</label>
+      <input type="text" [(ngModel)]="user.nom" name="nom" required><br>
+      
+      <label>Prénom:</label>
+      <input type="text" [(ngModel)]="user['prénom']" name="prénom" required><br>
+      
+      <label>Email:</label>
+      <input type="email" [(ngModel)]="user.email" name="email" required><br>
+      
+      <label>Poste:</label>
+      <input type="text" [(ngModel)]="user.poste" name="poste" required><br>
+      
+      <label>Département:</label>
+      <input type="text" [(ngModel)]="user['département']" name="département" required><br>
+      
+      <label>Lieu de Travail:</label>
+      <input type="text" [(ngModel)]="user.lieu_de_travail" name="lieu_de_travail" required><br>
+      
+      <label>Role:</label>
+      <input type="text" [(ngModel)]="user.role" name="role" required><br>
+      
+      <label>Grade:</label>
+      <input type="number" [(ngModel)]="user.grade" name="grade" required><br>
+      
+      <label>Note:</label>
+      <textarea [(ngModel)]="user.note" name="note" required></textarea><br>
+      
+      <button type="submit">Update</button>
+    </form>
+  </div>
+
+
+
+
+</div>

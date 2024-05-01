@@ -1,0 +1,33 @@
+<p>membre-equipe works!</p>
+<div class="container mt-3">
+    <table class="table table-striped mt-3">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>FirstName</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Département</th>
+            <th>Note</th>
+            <th>Nom Equipe</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{ employee['prénom'] }}</td>
+            <td>{{ employee['nom'] }}</td>
+            <td>{{ employee['username'] }}</td>
+            <td>{{ employee['email'] }}</td>
+            <td>{{ employee['role'] }}</td>
+            <td>{{ employee['département'] }}</td>
+            <input [(ngModel)]="employee.note" name="note" required><br>
+            <td>{{ employee['nom_equipe'] }}</td>
+            <td><button >Enregistrer</button></td>
+
+          </tr>
+        </tbody>
+    </table>
+    <button>Dashboard</button>
+</div>

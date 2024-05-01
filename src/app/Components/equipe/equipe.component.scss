@@ -1,0 +1,22 @@
+.photo-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: 45vh; /* Hauteur de la fenêtre */
+   }
+   
+   .photo {
+     margin-right: 45px; /* Espace entre les photos */
+     margin: 0 60px; /* Ajoute de l'espace horizontal entre les images */
+   }
+   
+   .photo img {
+     width: 100px; /* Largeur des images */
+     height: 100px; /* Hauteur des images */
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ajoute une ombre à chaque image */
+   }
+   
+   h2 {
+     text-align: center; /* Centre le texte horizontalement */
+   }
+   

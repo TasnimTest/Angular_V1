@@ -1,0 +1,97 @@
+<div *ngIf="isLoggedIn()" class="navbar">
+  <img src="../../../assets/image/logo.jpg" alt="Logo de l'entreprise">
+  <div class="user-details">
+    <div *ngIf="authService.getUserDetails() as userDetail">
+      {{ userDetail.username }}
+    </div>
+    <div *ngIf="authService.getUserDetails() as userDetail">
+      {{ userDetail.role }}
+    </div>
+  </div>
+  <img src="../../../assets/image/logout.png" alt="Image de déconnexion" class="logout-image" (click)="logout()">
+
+  <div class="sidebar-container">
+    <div  [ngClass]="{ 'hidden': !sidebarVisible }">
+      <div class="sidebar">
+        <ul>
+            <li>
+              <a href="/home">Home</a>
+            </li>
+            <!-- Rubriques pour l'employé -->
+            <ng-container *ngIf="userRole === 'Employé'">
+              <li>
+                <a routerLink="/profile">Profile</a>
+                <ul class="sub-menu">
+                  <li><a  href="../employee">Update </a></li>
+                  <li><a  href="../password-update">Password Update</a></li>
+                </ul>
+              </li>
+              <li>
+                <a  routerLink="/profile">Les Formation</a>
+                <ul class="sub-menu">
+                  <li><a href="../formation">Mes Formation</a></li>
+                  <li><a href="/Catalogueformation">Catalogue des Formation</a></li>
+                </ul>
+              </li>
+            </ng-container>
+          <!-- Rubriques pour le manager -->
+            <ng-container *ngIf="userRole === 'Manager'">
+              <li>
+                <a routerLink="/profile">Profile</a>
+                <ul class="sub-menu">
+                  <li><a  href="../manager">Update </a></li>
+                  <li><a href="../password-update">Password Update</a></li>
+                </ul>
+              </li>
+              <li>
+                <a  routerLink="/formation">Les Formations</a>
+                <ul class="sub-menu">
+                  <li><a href="../formation">Mes Formation</a></li>
+                  <li><a href="/Catalogueformation">Catalogue des Formation</a></li>
+           
+                </ul>
+              </li>
+            </ng-container>
+          <!-- Rubriques pour le Admin -->
+            <ng-container *ngIf="userRole === 'Admin'">
+              <li>
+                <a  routerLink="/profile">Profile</a>
+                <ul class="sub-menu">
+                  <li><a  href="../admin">Update </a></li>
+                  <li><a  href="../password-update">Password Update</a></li>
+                </ul>
+              </li>
+              <li>
+                <a  routerLink="/formation">Les Formation</a>
+                <ul class="sub-menu">
+                  <li><a href="/formation">Mes Formation</a></li>
+                  <li><a href="/Catalogueformation">Catalogue des Formation</a></li>
+                </ul>
+              </li>
+            </ng-container>
+            <li>
+              <a  href="/competence">Les Compétences</a>
+            </li>
+            <li>
+              <a href="/dashboard">Dashboard</a>
+            </li>
+          <!-- Rubriques pour le manager -->
+          <ng-container *ngIf="userRole === 'Manager'">
+            <li><a href="/equipe">Equipe</a></li>
+          </ng-container>
+          <!-- Rubriques pour l'administrateur -->
+          <ng-container *ngIf="userRole === 'Admin'">
+            <li><a routerLink="/administrateur">Administration</a></li>
+            <li><a href="/Ajouterformation">Ajouter une Formation</a></li>
+            <li><a href="/listeEmployés">liste des employés</a></li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <button class="toggle-button" (click)="toggleSidebar()">
+    <img src="../../../assets/image/sidebar.jpg" alt="Afficher le sidebar">
+  </button>
+  
+  </div>
+  

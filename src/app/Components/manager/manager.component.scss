@@ -1,0 +1,47 @@
+/* Style général du formulaire */
+.form-container {
+    margin-top: 40px;
+    width: 400px; /* Largeur du formulaire */
+    margin-left: 500px; /* Décalage à partir de la barre latérale */
+    margin-right: auto; /* Décalage à partir de la barre latérale */
+    padding: 40px; /* Espacement intérieur du formulaire */
+    background-color: #f9f9f9; /* Couleur de fond du formulaire */
+    border-radius: 8px; /* Bordure arrondie */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  }
+  .form-container label {
+    display: inline-block; /* Afficher chaque étiquette en ligne */
+    width: 120px; /* Largeur des étiquettes (ajustez selon vos besoins) */
+    margin-right: 10px; /* Marge entre les étiquettes et les champs de saisie */
+    text-align: right; /* Aligner le texte des étiquettes à droite */
+  }
+  
+  .form-container input[type="text"],
+  .form-container input[type="email"],
+  .form-container input[type="number"],
+  .form-container textarea {
+    display: inline-block; /* Afficher chaque champ de saisie en ligne */
+    width: calc(100% - 130px); /* Largeur des champs de saisie (100% moins la largeur des étiquettes et la marge) */
+    padding: 8px; /* Espacement intérieur du champ de saisie */
+    margin-bottom: 10px; /* Espacement entre chaque champ de saisie */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 4px; /* Bordure arrondie */
+    box-sizing: border-box; /* La largeur inclut la bordure et le remplissage */
+  }
+  
+  /* Style du bouton */
+  .form-container button {
+    width: 100%; /* Largeur du bouton */
+    padding: 10px; /* Espacement intérieur du bouton */
+    background-color: #007bff; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    border: none; /* Pas de bordure */
+    border-radius: 4px; /* Bordure arrondie */
+    cursor: pointer; /* Curseur pointeur au survol */
+  }
+  
+  /* Style du bouton au survol */
+  .form-container button:hover {
+    background-color: #0056b3; /* Couleur de fond du bouton au survol */
+  }
+  
